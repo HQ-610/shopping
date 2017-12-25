@@ -4,15 +4,14 @@ language: node_js
 node_js: stable
 
 before_install:
-  on:
-   tags:true
+  # on:
+  #  tags:true
 
-install:
- - npm install
+install:true
 # 指定构建时的shell命令
 script:
- - npm install es-lint
- - npm run lint
+ - chmod 755 ./travis.sh
+ - ./travis.sh
 # 指定构建步骤成功后的执行动作
 # after_success:
   
