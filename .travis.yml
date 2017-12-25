@@ -3,11 +3,10 @@ language: node_js
 # 防止低版本会报错
 node_js: stable
 
-before_install:
+# before_install:
   # on:
   #  tags:true
-
-install:true
+install : true
 # 指定构建时的shell命令
 script:
  - chmod 755 ./travis.sh
