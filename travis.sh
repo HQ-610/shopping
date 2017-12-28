@@ -1,21 +1,17 @@
 
 echo git tag: $TRAVIS_TAG
-if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
-# PURE_TAG=`git status | grep 'Not currently on any branch'`
-# CUR_SHA=`git rev-parse HEAD`
-# CUR_TAG=`git tag --points-at $CUR_SHA`
 
-# echo ''
-# echo git status: $PURE_TAG
-# echo git tag: $CUR_TAG
+if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ] && ; then
 
-# if [ $CUR_TAG ] && [ "$PURE_TAG"x != ""x ]; then
+    if [`echo $TRAVIS_TAG | grep "^plugin_[0-9]+\.[0-9]+\.[0-9]+$"`] then
 
-echo ''
-echo '[is a tag] start packing'
-
-npm install es-lint
-npm run lint
+        echo ''
+        echo '[is a tag] start packing'
+        npm install
+        npm run build
+    else
+        echo ''
+        echo 'The format of the tag is not correct'
 
 else
 
