@@ -6,7 +6,7 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]; then
     echo "hh"
     echo `echo $TRAVIS_TAG | grep "^plugin_[0-9]+\.[0-9]+\.[0-9]+$"`
 
-    if [`echo $TRAVIS_TAG | grep "^plugin_[0-9]+\.[0-9]+\.[0-9]+$"`]; then
+    if [ `echo $TRAVIS_TAG | grep "^plugin_[0-9]+\.[0-9]+\.[0-9]+$"` ]; then
 
         echo ''
         echo '[is a tag] start packing'
