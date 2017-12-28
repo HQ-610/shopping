@@ -12,6 +12,7 @@ if [ $TRAVIS_TAG ] && [ "$TRAVIS_TAG"x != ""x ]  then
     else
         echo ''
         echo 'The format of the tag is not correct'
+    fi
 
 else
 
